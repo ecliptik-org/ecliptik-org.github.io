@@ -1,0 +1,142 @@
+<html>
+<head>
+    <style>
+        .container {
+            width: 300px;
+            height: 120px;
+            background-color: #eeeeee;
+            position: relative;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+        }
+
+        .canvas-wrapper {
+            margin-left: 5%;
+            padding-top: 5%;
+            height: 0;
+            width: 30%;
+            padding-bottom: 30%;
+            position: relative;
+            display: inline-block;
+        }
+
+        .canvas {
+            position: absolute;
+            top: 11%;
+            border: 2px solid #bdc3c7;
+            border-radius: 6px;
+            bottom: 0;
+            background-color: #ffffff;
+            left: 0;
+            right: 0;
+            float: right;
+        }
+
+        .sliders {
+            position: absolute;
+            top: 12%;
+            bottom: 12%;
+            right: 0;
+            left: 40%;
+            display: inline;
+        }
+
+        .slider {
+            width: 60%;
+            background-color: #ffffff;
+            height: 50%;
+            border-radius: 9999px;
+            display: inline-block;
+            position: absolute;
+            left: 21%;
+            top: 25%;
+        }
+
+        .sliderwrapper {
+            position: relative;
+        }
+
+        .slider-range {
+            background-color: #16a085;
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            border-radius: 9999px;
+        }
+
+        .sliderwrapper span {
+            color: #bdc3c7;
+        }
+
+        .right-slider-pole{
+            float: right;
+            padding-right: 5%;
+        }
+    </style>
+    <script>
+        window.module = {};
+    </script>
+    <script src="dist/js/vendor/svg.js"></script>
+    <script src="dist/js/vendor/jquery.min.js"></script>
+    <script src="params.js"></script>
+    <script src="render.js"></script>
+    <script>
+        $(document).ready(function () {
+            var draw = SVG('ecliptik-canvas');
+            var width = $("#ecliptik-canvas").width();
+            draw.size(width, width);
+            var params = new Params();
+            params.fromUrlParam("SHEALE");
+            console.log(params);
+            paint(draw, params.sex, params.gender, params.orientation, params.sexChange, params.acceptSexChange, params.noOrientation);
+        });
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <div class="canvas-wrapper">
+        <div id="ecliptik-canvas" class="canvas"></div>
+    </div>
+    <div class="sliders">
+        <div class="sliderwrapper">
+            <span>S:</span>
+            <span class="left-slider-pole">F</span>
+            <div class="slider">
+                <div class="slider-range" style="width: 55.845%;">
+                </div>
+            </div>
+            <span class="right-slider-pole">M</span>
+        </div>
+        <div class="sliderwrapper">
+            <span>G:</span>
+            <span class="left-slider-pole">W</span>
+            <div class="slider">
+                <div class="slider-range" style="width: 20.845%;">
+                </div>
+            </div>
+            <span class="right-slider-pole">M</span>
+        </div>
+        <div class="sliderwrapper">
+            <span>O:</span>
+            <span class="left-slider-pole">F</span>
+            <div class="slider">
+                <div class="slider-range" style="width: 70.845%;">
+                </div>
+            </div>
+            <span class="right-slider-pole">M</span>
+        </div>
+    </div>
+</div>
+
+<script>
+
+</script>
+
+</body>
+</html>
+
+
+</div>
