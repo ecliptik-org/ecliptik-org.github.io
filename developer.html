@@ -29,7 +29,9 @@
     <link rel="icon" type="image/png" sizes="96x96" href="./dist/img/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./dist/img/favicon-16x16.png">
     <link rel="manifest" href="./dist/img/manifest.json">
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
@@ -62,7 +64,7 @@
         </div>
         <h1 class="demo-logo">
             <a href="/">
-                <img src="./ecliptik-logo.png"/>
+                <img src="./ecliptik-logo.png" />
             </a>
             <small>Because there is a lot of Space between Mars and Venus</small>
         </h1>
@@ -75,17 +77,40 @@
         <div class="jumbotron">
             <h4>Developer</h4>
             <h6>How to integrate Ecliptik into your Website</h6>
-            
-            <pre><code class="html">
-                <![CDATA[<script src="path/to/jquery.js"></script>
-                <script src="path/to/phosbox.js"></script>]]]>
-            </code></pre>
+            Ecliptik is a single file javascript plugin. You can download ecliptik.js from our servers TODO or link a mirror on CDN TODO.
+            Ecliptik has dependencies to
+            <a href="https://code.jquery.com/">jQuery</a> and
+            <a href="http://svgjs.com/">SVG.js</a>.
+            <pre>
+1) Add the following script into your HTML-file.
+<code class="html">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.6.4/svg.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/ecliptik.js/1.0.0/ecliptik.min.js&quot;&gt;&lt;/script&gt;</code>
+2) Add a parent element for the ecliptik drawing.
+<code class="html">&lt;div id=&quot;myEcliptik&quot;&gt;&lt;/div&gt;</code>
+3) Initialize the ecliptik-symbol by calling the "ecliptik()" method on it.
+<code class="javascript">$(&quot;#myEcliptik&quot;).ecliptik( 
+{ 
+    sex: 0.5, // [-1,1] [female,male] 
+    gender: -0.5, // [-1,1] [woman,man] 
+    orientation: 0.5, // [-1,1] [female,male] 
+    sexChange: false, // [true,false] if oneself had a sexchange 
+    acceptSexChange: true, // [true,false] if one accepts people with sexchange 
+    noOrientation: false //[true,false] if one is asexual / did not share their orientation
+})</code>
+That's it.
+
+You can also add the parameters as HTML attribute. Be careful to use HTML encoding on the parameters here.
+<code class="html">&lt;div class=&quot;myEcliptik col-xs-4 col-md-2&quot; ecliptik-params=&quot;{&amp;#x22;sex&amp;#x22;:-1,&amp;#x22;gender&amp;#x22;:-1,&amp;#x22;orientation&amp;#x22;:1,&amp;#x22;sexChange&amp;#x22;:false,&amp;#x22;acceptSexChange&amp;#x22;:false,&amp;#x22;noOrientation&amp;#x22;:true}&quot;&gt;&lt;/div&gt;</code>
+In this case, you can initialize all Ecliptik elements on your page at once by simply calling the 
+"ecliptik()" method without parameters.  
+<code class="javascript">$(&quot;.myEcliptik&quot;).ecliptik()</code></pre>
 
             <h6 style="padding-top: 20px">Links</h6>
-            <h1>filltext</h1>
+            <h1>TODO</h1>
             <h6 style="padding-top: 20px">Contribute</h6>
             Help us making Ecliptik even better and bring it to a variety of different platforms.
-            <h1>links</h1>     
+            <a href="https://github.com/ecliptik-org"> Ecliptik on Github</a>.
         </div>
     </div>
 

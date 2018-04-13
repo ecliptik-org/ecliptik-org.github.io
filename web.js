@@ -30,14 +30,15 @@ function slidify(selector, varName, scale, offset) {
     };
 
     var timeout = {};
-    function sliderfix(){
-        onValueChange();
-        timeout.timeout = setInterval(function(){
-            onValueChange();
-        }, 100);    
-    }    
 
-    function sliderunfix(){ 
+    function sliderfix() {
+        onValueChange();
+        timeout.timeout = setInterval(function () {
+            onValueChange();
+        }, 100);
+    }
+
+    function sliderunfix() {
         clearInterval(timeout.timeout);
     }
 
@@ -96,7 +97,7 @@ function updateHoverText() {
     $(this).attr('title', params.fullDescription());
 }
 
-function socialize(){
+function socialize() {
 
     $('share1').tooltip({
         trigger: 'manual',
@@ -110,7 +111,7 @@ function socialize(){
     }
 
     function hideTooltip(btn) {
-        setTimeout(function() {
+        setTimeout(function () {
             $(btn).tooltip('destroy');
         }, 1000);
     }
@@ -118,18 +119,18 @@ function socialize(){
 
     var clipboard = new ClipboardJS('#share1');
 
-    clipboard.on('success', function(e) {
+    clipboard.on('success', function (e) {
         setTooltip(e.trigger, 'Copied!');
         hideTooltip(e.trigger);
-        $(e.trigger).mouseleave(function(){
+        $(e.trigger).mouseleave(function () {
             $(e.trigger).tooltip('destroy');
         });
     });
 
-    clipboard.on('error', function(e) {
+    clipboard.on('error', function (e) {
         setTooltip(e.trigger, 'Failed!');
         hideTooltip(e.trigger);
-        $(e.trigger).mouseleave(function(){
+        $(e.trigger).mouseleave(function () {
             $(e.trigger).tooltip('destroy');
         });
     });
