@@ -142,4 +142,5 @@ footer a {
 }
 
 body {
+    min-width: 480px;
 }

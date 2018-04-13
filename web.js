@@ -13,8 +13,10 @@ function paintwrapper() {
 }
 
 function updateJsSocial() {
-    $("#jsSocial").jsSocials({
-        url: "https://i.ecliptik.org/" + params.toUrlParam(),
+    var url = "https://i.ecliptik.org/" + params.toUrlParam();
+    $(".shareurl").val(url);
+    $(".jsSocial").jsSocials({
+        url: url,
         shares: ["facebook", "twitter", "linkedin", "pinterest", "stumbleupon", "telegram", "whatsapp", "email"]
     });
 }
@@ -72,9 +74,9 @@ function checkify(selector, varName) {
     })
 }
 
-function share() {
+function download() {
     var url = "https://i.ecliptik.org/";
-    url += params.toUrlParam();
+    url += params.toUrlParam() + "?download";
     window.open(url, '_blank');
 }
 
@@ -94,6 +96,46 @@ function updateHoverText() {
     $(this).attr('title', params.fullDescription());
 }
 
+function socialize(){
+
+    $('share1').tooltip({
+        trigger: 'manual',
+        placement: 'bottom'
+    });
+
+    function setTooltip(btn, message) {
+        $(btn).tooltip('hide')
+            .attr('data-original-title', message)
+            .tooltip('show');
+    }
+
+    function hideTooltip(btn) {
+        setTimeout(function() {
+            $(btn).tooltip('destroy');
+        }, 1000);
+    }
+
+
+    var clipboard = new ClipboardJS('#share1');
+
+    clipboard.on('success', function(e) {
+        setTooltip(e.trigger, 'Copied!');
+        hideTooltip(e.trigger);
+        $(e.trigger).mouseleave(function(){
+            $(e.trigger).tooltip('destroy');
+        });
+    });
+
+    clipboard.on('error', function(e) {
+        setTooltip(e.trigger, 'Failed!');
+        hideTooltip(e.trigger);
+        $(e.trigger).mouseleave(function(){
+            $(e.trigger).tooltip('destroy');
+        });
+    });
+
+}
+
 $(document).ready(function () {
     slidify("#slider1", "sex", 1, 0);
     slidify("#slider2", "gender", 1, 0);
@@ -102,8 +144,9 @@ $(document).ready(function () {
     checkify("#checkboxAcceptSexChange", "acceptSexChange");
     checkify("#checkboxNoOrientation", "noOrientation");
     paintwrapper();
-    $('#share').click(share);
-    setupJsSocials();   
+    socialize();
+    $('#share2').click(download);
+    setupJsSocials();
     $('#drawing').mouseenter(updateHoverText);
 });
 

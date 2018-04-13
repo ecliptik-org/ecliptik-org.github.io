@@ -11,10 +11,11 @@
     <link rel="stylesheet" type="text/css"
           href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link rel="stylesheet" type="text/css" href="/ecliptik-styles.css"/>
+    <link rel="stylesheet" type="text/css" href="./ecliptik-styles.css"/>
     <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.css"/>
     <link type="text/css" rel="stylesheet"
           href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials-theme-flat.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
     <link rel="apple-touch-icon" sizes="57x57" href="./dist/img/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="./dist/img/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="./dist/img/apple-icon-72x72.png">
@@ -148,18 +149,24 @@
             <div class="col-xs-12 col-sm-8 col-sm-offset-4 text-left">
                 <p style="padding-top: 1em;">
                     <span>Share your Ecliptik</span>
-                <div id="jsSocial"></div>
-                <div>
-                    <input readonly type="text" value="https://i.ecliptik.org/asds"
-                           style="color: black; float:right;"
-                           class="form-control">
-                    <a class="btn btn-lg btn-primary" role="button" id="share">Share as PNG»</a>
+                <div class="jsSocial"></div>
+                <small style="padding-left: 0;" class="sliderDescription">Direct Link:</small><br>
+                <div style="display:inline">
+                    <input readonly type="text" value=""
+                           id="sharelinkinput"
+                           style="display:inline; color:black; width: 231px; position: relative; top: 2px;"
+                           class="form-control shareurl">
+                    <a class="btn btn-lg btn-primary" data-clipboard-target="#sharelinkinput"
+                       style="display:inline;" role="button" id="share1">Copy Link
+                        <Link>
+                    </a>
+                    <span>&nbsp;</span>
+                    <a class="btn btn-lg btn-primary" style="display:inline;" role="button" id="share2">Download
+                        <Link>
+                    </a>
                 </div>
                 </p>
             </div>
-        </div>
-        <div class="row">
-            <div id="jsSocial"></div>
         </div>
     </div>
 </div>
