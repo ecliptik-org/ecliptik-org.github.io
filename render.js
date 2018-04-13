@@ -81,7 +81,7 @@ function drawArc(draw, color, offset, sex, arcHeight, lineWidth) {
 
 function paint(draw, sex, gender, orientation, sexChange, acceptSexChange, noOrientation) {
     if( typeof window === "undefined" ) {
-        draw.viewbox(40, 0, 120, 120);
+        draw.viewbox(40, 5, 120, 120);
     }else{
         draw.viewbox(40, 10, 120, 110);
     }
