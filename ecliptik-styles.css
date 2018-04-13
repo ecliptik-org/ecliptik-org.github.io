@@ -20,10 +20,19 @@
     margin-right: 10px;
 }
 
+.ui-slider-range {
+    background-color: white !important;
+}
+
+.ui-slider-handle {
+    height: 22px;
+    width: 22px;
+}
+
 .mycontainer {
     margin: auto;
     max-width: 970px;
-    width:100%;
+    width: 100%;
 }
 
 .demo-headline {
@@ -45,8 +54,8 @@
 }
 
 .demo-logo img {
-    max-width: 450px; 
-    width:90%
+    max-width: 450px;
+    width: 90%
 }
 
 .demo-logo small {
@@ -90,7 +99,7 @@ footer a {
     margin: 20px;
 }
 
-.navbar-nav>.donate {
+.navbar-nav > .donate {
     padding: 3px 15px 5px;
 }
 
@@ -102,12 +111,15 @@ footer a {
     border: 2px solid white;
 }
 
-@media(max-width:767px) {
+@media (max-width: 767px) {
     .supabutton {
         margin-left: 0px;
         font-size: 0.7em;
     }
-    .my-checkbox {}
+
+    .my-checkbox {
+    }
+
     .slider {
         width: 70%;
     }
@@ -120,10 +132,11 @@ footer a {
     margin-top: 5px;
 }
 
-@media(min-width:767px) {
+@media (min-width: 767px) {
     .slider {
         width: 200px;
     }
+
     .my-checkbox {
         position: absolute;
         display: inline-block;
