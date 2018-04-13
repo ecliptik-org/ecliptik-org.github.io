@@ -7,6 +7,23 @@ function Params() {
     this.noOrientation = false;
 }
 
+Params.prototype.copyFrom = function(other){
+    if(other == null)
+        return;
+    if(other.sex != null)
+        this.sex = other.sex;
+    if(other.gender != null)
+        this.gender = other.gender;
+    if(other.orientation != null)
+        this.orientation = other.orientation;
+    if(other.sexChange != null)
+        this.sexChange = other.sexChange;
+    if(other.acceptSexChange != null)
+        this.acceptSexChange = other.acceptSexChange;
+    if(other.noOrientation != null)
+        this.noOrientation = other.noOrientation;
+}
+
 function isSet(val, bit) {
     if ((val & (1 << bit)) > 0)
         return 1;
