@@ -121,6 +121,12 @@ footer a {
     }
 }
 
+@media(max-width:330px) {
+    .slider {
+        width: 55%;
+    }
+}
+
 .jumbotron p {
     font-weight: 400;
 }
@@ -167,8 +173,4 @@ footer a {
     width: 18px !important;
     margin-right: 4px;
     display: inline-block;
-}
-
-body {
-    min-width: 480px;
 }
