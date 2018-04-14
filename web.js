@@ -7,6 +7,7 @@ $(window).resize(function () {
 $('.thumbnail').height($('.thumbnail').width());
 
 function paintwrapper() {
+    updateJsSocial();
     var width = $('.thumbnail').width();
     draw.size(width, width);
     paint(draw, params.sex, params.gender, params.orientation, params.sexChange, params.acceptSexChange, params.noOrientation);
@@ -25,7 +26,6 @@ function slidify(selector, varName, scale, offset) {
     var granularity = 100000;
     var onValueChange = function (e) {
         params[varName] = offset + scale * ($(selector).slider("value") / granularity);
-        updateJsSocial();
         paintwrapper();
     };
 
