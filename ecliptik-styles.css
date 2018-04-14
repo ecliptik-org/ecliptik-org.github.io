@@ -60,6 +60,16 @@
     padding-bottom: 0px;
 }
 
+.ui-slider-range {
+    background-color: white !important;
+}
+
+.ui-slider-handle {
+    height: 22px;
+    width: 22px;
+    top: -5px;
+}
+
 .ui-slider-range.disabled {
     background-color: #ccd8d5;
 }
