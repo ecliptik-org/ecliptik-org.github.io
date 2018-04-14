@@ -77,9 +77,10 @@ function checkify(selector, varName) {
 
 function download() {
     ga('send', {
-        hitType: 'social',
-        eventCategory: 'share',
-        eventAction: 'download'
+        hitType: 'event',
+        eventCategory: 'social',
+        eventAction: 'share',
+        eventLabel: 'download'
     });
     var url = "https://i.ecliptik.org/";
     url += params.toUrlParam() + "?download";
@@ -98,9 +99,10 @@ function setupJsSocials() {
                 if (!e.share)
                     return;
                 ga('send', {
-                    hitType: 'social',
-                    eventCategory: 'share',
-                    eventAction: '' + e.share
+                    hitType: 'event',
+                    eventCategory: 'social',
+                    eventAction: 'share',
+                    eventLabel: '' + e.share
                 });
             }
         }
@@ -122,9 +124,10 @@ function socialize() {
 
     function setTooltip(btn, message) {
         ga('send', {
-            hitType: 'social',
-            eventCategory: 'share',
-            eventAction: 'copy-link'
+            hitType: 'event',
+            eventCategory: 'social',
+            eventAction: 'share',
+            eventLabel: 'copy-link'
         });
         $(btn).tooltip('hide')
             .attr('data-original-title', message)
