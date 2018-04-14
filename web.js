@@ -95,7 +95,10 @@ function setupJsSocials() {
         text: "Ecliptik",
         url: "https://ecliptik.org/",
         on: {
-            click: function (e) {
+            click: function () {
+                var e = this;
+                console.log(e);
+                console.log(e.share);
                 if (!e.share)
                     return;
                 ga('send', {
