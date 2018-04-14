@@ -82,13 +82,13 @@
             <a href="https://code.jquery.com/">jQuery</a> and
             <a href="http://svgjs.com/">SVG.js</a>.
             <pre>
-1) Add the following script into your HTML-file.
+1) Add the following scripts into your HTML-file.
 <code class="html">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js&quot;&gt;&lt;/script&gt;
 &lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.6.4/svg.min.js&quot;&gt;&lt;/script&gt;
 &lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/ecliptik.js/1.0.0/ecliptik.min.js&quot;&gt;&lt;/script&gt;</code>
 2) Add a parent element for the ecliptik drawing.
 <code class="html">&lt;div id=&quot;myEcliptik&quot;&gt;&lt;/div&gt;</code>
-3) Initialize the ecliptik-symbol by calling the "ecliptik()" method on it.
+3) Initialize the ecliptik-symbol by calling the "ecliptik()" method on it and provide the parameters for rendering.
 <code class="javascript">$(&quot;#myEcliptik&quot;).ecliptik( 
 { 
     sex: 0.5, // [-1,1] [female,male] 
@@ -100,7 +100,8 @@
 })</code>
 That's it.
 
-You can also add the parameters as HTML attribute. Be careful to use HTML encoding on the parameters here.
+You can also add the parameters as HTML attribute in JSON-format. 
+Don't forget to HTML escape the parameters before pasting into your HTML file.
 <code class="html">&lt;div class=&quot;myEcliptik col-xs-4 col-md-2&quot; ecliptik-params=&quot;{&amp;#x22;sex&amp;#x22;:-1,&amp;#x22;gender&amp;#x22;:-1,&amp;#x22;orientation&amp;#x22;:1,&amp;#x22;sexChange&amp;#x22;:false,&amp;#x22;acceptSexChange&amp;#x22;:false,&amp;#x22;noOrientation&amp;#x22;:true}&quot;&gt;&lt;/div&gt;</code>
 In this case, you can initialize all Ecliptik elements on your page at once by simply calling the 
 "ecliptik()" method without parameters.  
